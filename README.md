@@ -9,8 +9,11 @@ Make a set of Animated **'Spooky'** Eyes. Use them them in your Porch Pumpkins, 
 Grab the full ESPHome Code from the file: [pumpkin-1.yaml](https://github.com/3ative/spooky-eyes/blob/main/pumpkin-1.yaml) above
 
 
+## 🎁 BREAKING CHANGE
+In the latest version of ESPHome, "fastled_clockless" has 'issues' on ESP8266.
+New code example is: [pumpkin-1_2022-2-1.yaml](https://github.com/3ative/spooky-eyes/blob/main/pumpkin-1_2022-2-1.yaml)
 
-
+##
 
 🎁 Found this useful or want to say 'thanks' and support my efforts...
 
