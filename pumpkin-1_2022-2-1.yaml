@@ -39,11 +39,11 @@ switch:
       - light.turn_off: eyes3
 
 light:
-  - platform: neopixelbus
-    variant: WS2812
+  - platform: neopixelbus # Was: fastled_clockless
+    variant: WS2812       # Was: chipset: WS2812B
     pin: D1
     num_leds: 3
-    type: GRB
+    type: GRB             # Was: rgb_order
     name: Pumpkin 1 Eyes
     id: eyes1
     on_turn_on:
@@ -58,49 +58,5 @@ light:
       - addressable_fireworks:
           name: Looking
           update_interval: 1025ms # 'Looking' Left-Right speed
-          spark_probability: 100%
-          fade_out_rate: 255
-
-  - platform: neopixelbus
-    variant: WS2812
-    pin: D3
-    num_leds: 3
-    type: GRB
-    name: Pumpkin 2 Eyes
-    id: eyes2
-    on_turn_on:
-      - lambda: !lambda |
-          auto call = id(eyes2).turn_on();
-          call.set_brightness(0.3); 
-          call.set_color_mode(ColorMode::RGB);
-          call.set_rgb((255*0.00001531864)*${eyes2_red},(255*0.00001531864)*${eyes2_green},(255*0.00001531864)*${eyes2_blue});
-          call.set_effect("looking");
-          call.perform();
-    effects:
-      - addressable_fireworks:
-          name: Looking
-          update_interval: 825ms # 'Looking' Left-Right speed
-          spark_probability: 100%
-          fade_out_rate: 255
-          
-  - platform: neopixelbus
-    variant: WS2812
-    pin: D6
-    num_leds: 3
-    type: GRB
-    name: Pumpkin 3 Eyes
-    id: eyes3
-    on_turn_on:
-      - lambda: !lambda |
-          auto call = id(eyes3).turn_on();
-          call.set_brightness(0.3); 
-          call.set_color_mode(ColorMode::RGB);
-          call.set_rgb((255*0.00001531864)*${eyes3_red},(255*0.00001531864)*${eyes3_green},(255*0.00001531864)*${eyes3_blue});
-          call.set_effect("looking");
-          call.perform();
-    effects:
-      - addressable_fireworks:
-          name: Looking
-          update_interval: 2000ms # 'Looking' Left-Right speed
           spark_probability: 100%
           fade_out_rate: 255
