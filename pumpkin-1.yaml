@@ -15,6 +15,7 @@ wifi:
 logger:
 api:
 ota:
+  platform: esphome
 
 switch:
   - platform: template
